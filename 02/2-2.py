@@ -16,10 +16,7 @@ with open("./02/input.txt", "r", encoding="utf-8") as file:
                 direction = 1 if report_copy[1] > report_copy[0] else -1
                 report_copy_2 = report_copy.copy()
                 report_copy_2.pop(0)
-                safe = all(
-                    1 <= (b - a) * direction <= 3
-                    for a, b in zip(report_copy, report_copy_2)
-                )
+                safe = all(1 <= (b - a) * direction <= 3 for a, b in zip(report_copy, report_copy_2))
                 if safe:
                     n_safe += 1
                     break
